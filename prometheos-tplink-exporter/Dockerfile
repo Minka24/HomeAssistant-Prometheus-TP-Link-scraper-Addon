@@ -28,5 +28,13 @@ COPY --from=build-venv /venv /venv
 COPY tl-sg-prometheus-exporter.py /app/exporter.py
 COPY --from=build /app/run.sh /app/run.sh
 
+ARG TEMPIO_VERSION BUILD_ARCH
+RUN \
+    curl -sSLf -o /usr/bin/tempio \
+    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+
+# Copy root filesystem
+COPY rootfs /
+
 # ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 # CMD ["/app/run.sh"]
