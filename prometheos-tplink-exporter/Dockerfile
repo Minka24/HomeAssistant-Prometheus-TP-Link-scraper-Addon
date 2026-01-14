@@ -28,6 +28,8 @@ COPY --from=build-venv /venv /venv
 COPY tl-sg-prometheus-exporter.py /app/exporter.py
 COPY --from=build /app/run.sh /app/run.sh
 
+RUN apt-get update && apt-get install -y curl
+
 ARG TEMPIO_VERSION BUILD_ARCH
 RUN \
     curl -sSLf -o /usr/bin/tempio \
