@@ -11,7 +11,17 @@ init: false
 map:
   - share:rw
 options:
-  message: "Hello world..."
+  switch_ip: "192.168.2.1"
+  username: "admin"
+  password: "admin"
+
 schema:
-  message: "str?"
+  switch_ip: str
+  username: str
+  password: password
+
+environment:
+  SWITCH_IP: "!env switch_ip"
+  USERNAME: "!env username"
+  PASSWORD: "!env password"
 image: "ghcr.io/home-assistant/{arch}-addon-example"
