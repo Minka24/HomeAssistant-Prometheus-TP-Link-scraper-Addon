@@ -26,7 +26,7 @@ COPY --from=build /venv/bin/dumb-init /usr/bin/dumb-init
 WORKDIR /app
 COPY --from=build-venv /venv /venv
 COPY tl-sg-prometheus-exporter.py /app/exporter.py
-COPY --from=build /app/run.sh /app/run.sh
+COPY --from=build run.sh /app/run.sh
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/app/run.sh"]

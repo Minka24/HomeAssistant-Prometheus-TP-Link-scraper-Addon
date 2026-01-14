@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Prometheos TP-Link exporter
-version: "1.0.1-b2"
+version: "1.0.1-b3"
 slug: prometheos-tplink-exporter
 description: "Prometheos exporter for TP-Link smart devices"
 url: "https://github.com/home-assistant/addons-example/tree/main/example"
