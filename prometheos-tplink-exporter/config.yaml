@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Prometheos TP-Link exporter
-version: "1.0.2-b2"
+version: "1.0.2-b3"
 slug: prometheos-tplink-exporter
 description: "Prometheos exporter for TP-Link smart devices"
 url: "https://github.com/home-assistant/addons-example/tree/main/example"
@@ -19,8 +19,3 @@ schema:
   switch_ip: str
   username: str
   password: password
-
-environment:
-  SWITCH_IP: "!env switch_ip"
-  USERNAME: "!env username"
-  PASSWORD: "!env password"
