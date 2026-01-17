@@ -1,7 +1,7 @@
 http_port: 8000
 switch:
-  - ip: ${SWITCH_IP}
-    username: ${USERNAME}
-    password: ${PASSWORD}
+  - ip: 192.168.1.1
+    username: admin
+    password: admin
     cache_login: True
     http_port: 80
