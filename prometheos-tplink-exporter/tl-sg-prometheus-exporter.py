@@ -12,6 +12,7 @@ from logging.config import dictConfig
 
 from prometheus_client.core import CounterMetricFamily, GaugeMetricFamily, InfoMetricFamily, StateSetMetricFamily, REGISTRY
 from prometheus_client import start_http_server
+import os
     
 logging_config = dict(
     version = 1,
@@ -277,6 +278,8 @@ class CustomCollector(object):
         logger.info("Finished collecting...")
 
 if __name__ == '__main__':
+    switch_ip = os.environ.get("SWITCH_IP", "Keine IP gefunden")
+    logger.info(f"Starting TL-SG Prometheus Exporter for IP: {switch_ip}")
     parser = argparse.ArgumentParser(description="Export packet data from TL-SG-10x switches to prometheus")
     parser.add_argument('--config', type=str, nargs=1, required=True, dest='configuration_file',
                         help='path to the yaml configuration file')
