@@ -279,7 +279,11 @@ class CustomCollector(object):
 
 if __name__ == '__main__':
     switch_ip = os.environ.get("SWITCH_IP", "Keine IP gefunden")
+    username = os.environ.get("USERNAME", "Kein Username gefunden")
+    password = os.environ.get("PASSWORD", "Kein Passwort gefunden")
     logger.info(f"Starting TL-SG Prometheus Exporter for IP: {switch_ip}")
+    logger.info(f"Using username: {username}")
+    logger.info(f"Using password: {password}")
     parser = argparse.ArgumentParser(description="Export packet data from TL-SG-10x switches to prometheus")
     parser.add_argument('--config', type=str, nargs=1, required=True, dest='configuration_file',
                         help='path to the yaml configuration file')
